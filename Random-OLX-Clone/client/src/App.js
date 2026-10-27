@@ -34,7 +34,7 @@ import SearchResults from "./features/search/SearchResults";
 import MyChat from "./features/chat/MyChat";
 import AdminDashboard from "./features/admin/AdminDashboard";
 
-const BACKEND_URL = "http://localhost:5000";
+const BACKEND_URL = "/api";
 
 // ─── PAGE TRANSITION WRAPPER ─────────────────────────────────────────────────
 const pageVariants = {
@@ -100,7 +100,7 @@ function App() {
 
   async function checkBackendStatus() {
     try {
-      const r = await fetch(`${BACKEND_URL}/api/check-status`);
+      const r = await fetch(`${BACKEND_URL}/check-status`);
       const d = await r.json();
       setBackendStatus(d.status);
     } catch { setBackendStatus("offline"); }

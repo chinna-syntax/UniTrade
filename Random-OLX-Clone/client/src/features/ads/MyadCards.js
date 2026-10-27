@@ -18,7 +18,7 @@ function MyadCards() {
   const [isLoading, setIsLoading] = useState(true);
   const [visibleproducts, setVisibleProducts] = useState(6);
   const hasMoreProductsToLoad = visibleproducts < ads.length;
-  const backendUrl = 'http://localhost:5000';
+  const backendUrl = '/api';
 
   useEffect(() => {
     const fetchAds = async () => {

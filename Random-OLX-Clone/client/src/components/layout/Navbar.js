@@ -4,7 +4,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import Modallogin from "../auth/Modallogin";
 import axios from "axios";
 
-const backendUrl = "http://localhost:5000";
+const backendUrl = "/api";
 
 export default function Navbar({ auth, setAuth }) {
   const navigate = useNavigate();

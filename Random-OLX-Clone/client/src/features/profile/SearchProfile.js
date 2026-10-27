@@ -31,7 +31,7 @@ export default function SearchProfile() {
   const [products, setProducts] = useState([]);
   const [visibleproducts, setVisibleProducts] = useState(6);
   const hasMoreProductsToLoad = visibleproducts < products.length;
-  const backendUrl = 'http://localhost:5000';
+  const backendUrl = '/api';
 
   const fetchProfileData = useCallback(async () => {
     // Check if viewing own profile - redirect

@@ -9,7 +9,7 @@ export default function FetchChat({ id, toData, to }) {
   const authName = localStorage.getItem("authname");
   const authemail = localStorage.getItem("authemail");
   const authToken = localStorage.getItem("authToken");
-  const backendUrl = 'http://localhost:5000';
+  const backendUrl = '/api';
   const [newMessages, setNewMessages] = useState([]);
   const [hasNewMessages, setHasNewMessages] = useState(false);
   const messageContainerRef = useRef(null);
@@ -29,7 +29,7 @@ export default function FetchChat({ id, toData, to }) {
       const fetchNewMessages = async () => {
         const currentMessageLength = newMessages.length;
         try {
-          const response = await axios.get(`${backendUrl}/api/new-messages`, {
+          const response = await axios.get(`${backendUrl}/new-messages`, {
             params: { id, to },
             headers: {
               Authorization: `Bearer ${authToken}`,

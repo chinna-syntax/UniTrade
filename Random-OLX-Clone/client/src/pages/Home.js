@@ -177,7 +177,7 @@ export default function Home() {
 
   // Merge server products with demo products
   useEffect(() => {
-    axios.get("http://localhost:5000/getProducts")
+    axios.get("/api/getProducts")
       .then(r => {
         const live = (r.data || []).filter(p =>
           // Only include server products that have real images (not old placeholders)

@@ -35,7 +35,7 @@ import { getSafeImageUrl } from "../../utils/imageUtils";
 const PreviewAd = ({auth}) => {
   const { id } = useParams();
   const navigate = useNavigate();
-  const backendUrl = 'http://localhost:5000';
+  const backendUrl = '/api';
   const [data, setData] = useState({});
   const [own, setOwn] = useState();
   const [loading, setLoading] = useState(true);

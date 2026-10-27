@@ -100,7 +100,7 @@ export default function AdminDashboard() {
   const cancelRef = React.useRef();
   const toast = useToast();
   const navigate = useNavigate();
-  const backendUrl = 'http://localhost:5000';
+  const backendUrl = '/api';
   const authToken = localStorage.getItem('authToken');
 
   const cardBg = useColorModeValue('white', 'gray.800');

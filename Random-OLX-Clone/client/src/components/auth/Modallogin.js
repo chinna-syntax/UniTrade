@@ -39,7 +39,7 @@ export default function Modallogin({staticModal, setStaticModal, toggleShow}) {
   const [err, setErr] = useState();
   const toast = useToast();
   // DEMO MODE: Hardcoded backend URL — no .env needed
-  const backendUrl = 'http://localhost:5000';
+  const backendUrl = '/api';
 
   // Close modal handler
   const handleClose = () => {

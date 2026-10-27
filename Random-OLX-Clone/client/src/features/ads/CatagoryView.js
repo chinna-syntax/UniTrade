@@ -40,7 +40,7 @@ export default function CatagoryView() {
   const [loading, setLoading] = useState(true);
   const [visibleproducts, setVisibleProducts] = useState(6);
   const hasMoreProductsToLoad = visibleproducts < products.length;
-  const backendUrl = 'http://localhost:5000';
+  const backendUrl = '/api';
 
   const isValidCategory = categories.some(
     (cat) => cat.title.toLowerCase() === category.toLowerCase()

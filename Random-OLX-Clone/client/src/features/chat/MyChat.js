@@ -41,7 +41,7 @@ export default function MyChat() {
   const toast = useToast();
   const authToken = localStorage.getItem("authToken");
   const authemail = localStorage.getItem("authemail");
-  const backendUrl = 'http://localhost:5000';
+  const backendUrl = '/api';
 
   const [product, setProduct] = useState({});
   const [profileData, setProfileData] = useState({});

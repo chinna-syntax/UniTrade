@@ -90,7 +90,7 @@ export default function Contact() {
     message: "",
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
-  const backendUrl = 'http://localhost:5000';
+  const backendUrl = '/api';
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -101,7 +101,7 @@ export default function Contact() {
     setIsSubmitting(true);
     
     try {
-      const response = await fetch(`${backendUrl}/api/contact`, {
+      const response = await fetch(`${backendUrl}/contact`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

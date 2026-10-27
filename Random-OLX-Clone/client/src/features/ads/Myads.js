@@ -29,7 +29,7 @@ export default function Myads() {
   const [deletingCardId, setDeletingCardId] = useState(null);
   const [visibleproducts, setVisibleProducts] = useState(9);
   const hasMoreProductsToLoad = visibleproducts < ads.length;
-  const backendUrl = 'http://localhost:5000';
+  const backendUrl = '/api';
 
   const formatPrice = (price) => {
     if (!price) return "Price on request";

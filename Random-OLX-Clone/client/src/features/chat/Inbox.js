@@ -22,12 +22,12 @@ export default function Inbox() {
   const authToken = localStorage.getItem("authToken");
   const authemail = localStorage.getItem("authemail");
   const [isLoading, setIsLoading] = useState(true);
-  const backendUrl = 'http://localhost:5000';
+  const backendUrl = '/api';
 
   useEffect(() => {
     const fetchNewChats = async () => {
       try {
-        const response = await axios.get(`${backendUrl}/api/newchats`, {
+        const response = await axios.get(`${backendUrl}/newchats`, {
           headers: {
             Authorization: `Bearer ${authToken}`,
           },

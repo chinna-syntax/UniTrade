@@ -29,7 +29,7 @@ import { FiTag, FiEdit3, FiImage, FiSend, FiPlus } from "react-icons/fi";
 export default function SellForm() {
   const { category, item } = useParams();
   const navigate = useNavigate();
-  const backendUrl = 'http://localhost:5000';
+  const backendUrl = '/api';
   // DEMO MODE: Cloudinary removed — placeholder images used instead
 
   const isValidCategory = categories.some(

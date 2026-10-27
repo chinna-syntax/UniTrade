@@ -7,7 +7,7 @@ export default function SendChat({ id, to }) {
   const [message, setMessage] = useState("");
   const authToken = localStorage.getItem("authToken");
   const toast = useToast();
-  const backendUrl = 'http://localhost:5000';
+  const backendUrl = '/api';
   
   const handleMessageChange = (event) => {
     setMessage(event.target.value);
