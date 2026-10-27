@@ -282,3 +282,26 @@ The generated client bundle is deployable behind a CDN or reverse proxy. The Exp
 - Monitor API latency, error rates, Socket.io connection health, database saturation, Cloudinary failures, and authentication anomalies.
 - Use rolling deployments with readiness checks and graceful Socket.io connection draining.
 - Back up MongoDB according to the recovery point objective and test restoration regularly.
+
+## Vercel Monorepo Deployment
+
+The repository is deployable as one Vercel project; Render is not required. The root
+`vercel.json` builds the React client from `client/` and routes every `/api/*` request
+to the serverless Express entrypoint at `api/index.js`.
+
+1. Import the repository into Vercel and select the repository root as the project root.
+2. Keep the framework preset unset or use **Other**; the checked-in configuration supplies
+   the build and output settings.
+3. Configure the production environment variables required by the server, including
+   `JWT_SECRET`, `MONGO_URI`, and the Cloudinary credentials.
+4. Deploy with the standard Vercel build, or validate locally:
+
+```bash
+npm run install-all
+npm run build
+```
+
+The deployed frontend calls relative `/api/*` paths, so the browser uses the same
+origin for the React application and Express API. Local development remains available
+with `npm run dev`, which starts the client on port 3000 and the Express server on
+port 5000 through the client proxy.

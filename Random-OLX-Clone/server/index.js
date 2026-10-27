@@ -131,6 +131,16 @@ let contacts = [];
 app.use(cors());
 app.use(bodyParser.json());
 
+// Keep the API compatible with both local Express development and Vercel's
+// same-domain /api function routing.
+app.use((req, res, next) => {
+  const passthroughPaths = ["/api/check-status", "/api/new-messages", "/api/newchats", "/api/contact"];
+  if (req.path.startsWith("/api/") && !passthroughPaths.includes(req.path)) {
+    req.url = req.url.replace(/^\/api/, "");
+  }
+  next();
+});
+
 // --- Auth / Status Routes ---
 app.get("/api/check-status", (req, res) => {
   res.json({ status: "online" });
@@ -477,9 +487,12 @@ app.post("/admin/init", (req, res) => {
 
 // ─── START SERVER ─────────────────────────────────────────────────────────────
 
-const PORT = 5000;
-app.listen(PORT, () => {
-  console.log(`🚀 Server running on port ${PORT} (DEMO MODE — No DB, No .env needed)`);
-  console.log(`✅ Pre-loaded ${products.length} hostel exchange products`);
-  console.log(`📌 Dummy user: Senior Student <senior@college.edu>`);
-});
+if (require.main === module) {
+  const PORT = process.env.PORT || 5000;
+  app.listen(PORT, () => {
+    console.log(`UniTrade API running on port ${PORT}`);
+    console.log(`Loaded ${products.length} marketplace products`);
+  });
+}
+
+module.exports = app;
