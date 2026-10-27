@@ -101,8 +101,8 @@ function App() {
   async function checkBackendStatus() {
     try {
       const r = await fetch(`${BACKEND_URL}/check-status`);
-      const d = await r.json();
-      setBackendStatus(d.status);
+      if (!r.ok) throw new Error(`Backend status request failed: ${r.status}`);
+      setBackendStatus("online");
     } catch { setBackendStatus("offline"); }
     finally { setLoading(false); }
   }
