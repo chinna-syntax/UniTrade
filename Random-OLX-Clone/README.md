@@ -286,15 +286,22 @@ The generated client bundle is deployable behind a CDN or reverse proxy. The Exp
 ## Vercel Monorepo Deployment
 
 The repository is deployable as one Vercel project; Render is not required. The root
-`vercel.json` builds the React client from `client/` and routes every `/api/*` request
-to the serverless Express entrypoint at `api/index.js`.
+`vercel.json` uses Vercel's legacy `builds` configuration to compile the React client
+from `client/`, deploy the Express serverless function through `@vercel/node`, and
+route every `/api/*` request to `api/index.js`.
 
 1. Import the repository into Vercel and select the repository root as the project root.
-2. Keep the framework preset unset or use **Other**; the checked-in configuration supplies
-   the build and output settings.
+2. Select the **Other** framework preset. The checked-in `builds` configuration supplies
+   the frontend and backend builders.
 3. Configure the production environment variables required by the server, including
    `JWT_SECRET`, `MONGO_URI`, and the Cloudinary credentials.
-4. Deploy with the standard Vercel build, or validate locally:
+4. Use these dashboard settings when importing the root repository:
+
+   - **Build Command:** `npm run build`
+   - **Output Directory:** `client/build`
+   - **Framework Preset:** `Other`
+
+5. Deploy with the standard Vercel build, or validate locally:
 
 ```bash
 npm run install-all

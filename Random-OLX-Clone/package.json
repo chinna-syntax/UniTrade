@@ -5,7 +5,7 @@
   "description": "UniTrade enterprise campus marketplace monorepo",
   "scripts": {
     "install-all": "npm install --prefix client && npm install --prefix server",
-    "build": "npm run build --prefix client",
+    "build": "cd client && npm install && npm run build",
     "dev": "concurrently -n server,client \"npm run dev --prefix server\" \"npm start --prefix client\""
   },
   "devDependencies": {
