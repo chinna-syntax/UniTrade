@@ -41,7 +41,7 @@ function Login() {
   const [err, setErr] = useState();
   const toast = useToast();
   // DEMO MODE: Hardcoded backend URL — no .env needed
-  const backendUrl = '/api';
+  const backendUrl = 'https://unitradegame.onrender.com/api';
 
   // Login State
   const [loginEmail, setLoginEmail] = useState('');

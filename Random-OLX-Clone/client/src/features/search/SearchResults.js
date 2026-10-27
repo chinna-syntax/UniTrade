@@ -23,7 +23,7 @@ const cardVariants = {
 export default function SearchResults() {
   const [searchParams] = useSearchParams();
   const query = searchParams.get('query');
-  const backendUrl = '/api';
+  const backendUrl = 'https://unitradegame.onrender.com/api';
 
   const [results, setResults] = useState([]);
   const [loading, setLoading] = useState(true);

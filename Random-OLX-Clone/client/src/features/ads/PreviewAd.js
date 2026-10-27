@@ -35,7 +35,7 @@ import { getSafeImageUrl } from "../../utils/imageUtils";
 const PreviewAd = ({auth}) => {
   const { id } = useParams();
   const navigate = useNavigate();
-  const backendUrl = '/api';
+  const backendUrl = 'https://unitradegame.onrender.com/api';
   const [data, setData] = useState({});
   const [own, setOwn] = useState();
   const [loading, setLoading] = useState(true);

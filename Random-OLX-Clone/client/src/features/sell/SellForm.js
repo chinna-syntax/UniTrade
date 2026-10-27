@@ -29,7 +29,7 @@ import { FiTag, FiEdit3, FiImage, FiSend, FiPlus } from "react-icons/fi";
 export default function SellForm() {
   const { category, item } = useParams();
   const navigate = useNavigate();
-  const backendUrl = '/api';
+  const backendUrl = 'https://unitradegame.onrender.com/api';
   // DEMO MODE: Cloudinary removed — placeholder images used instead
 
   const isValidCategory = categories.some(

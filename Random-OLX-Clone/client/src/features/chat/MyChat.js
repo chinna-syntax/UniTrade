@@ -41,7 +41,7 @@ export default function MyChat() {
   const toast = useToast();
   const authToken = localStorage.getItem("authToken");
   const authemail = localStorage.getItem("authemail");
-  const backendUrl = '/api';
+  const backendUrl = 'https://unitradegame.onrender.com/api';
 
   const [product, setProduct] = useState({});
   const [profileData, setProfileData] = useState({});

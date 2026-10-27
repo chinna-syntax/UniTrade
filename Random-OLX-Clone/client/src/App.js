@@ -34,7 +34,7 @@ import SearchResults from "./features/search/SearchResults";
 import MyChat from "./features/chat/MyChat";
 import AdminDashboard from "./features/admin/AdminDashboard";
 
-const BACKEND_URL = "/api";
+const BACKEND_URL = "https://unitradegame.onrender.com/api";
 
 // ─── PAGE TRANSITION WRAPPER ─────────────────────────────────────────────────
 const pageVariants = {

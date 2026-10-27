@@ -90,7 +90,7 @@ export default function Contact() {
     message: "",
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
-  const backendUrl = '/api';
+  const backendUrl = 'https://unitradegame.onrender.com/api';
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });

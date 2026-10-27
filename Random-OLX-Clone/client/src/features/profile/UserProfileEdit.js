@@ -48,7 +48,7 @@ export default function UserProfileEdit() {
   const [phoneNumber, setPhoneNumber] = useState("");
   const [isLoading, setIsLoading] = useState(false);
   const [isInitialLoading, setIsInitialLoading] = useState(true);
-  const backendUrl = '/api';
+  const backendUrl = 'https://unitradegame.onrender.com/api';
   // DEMO MODE: Cloudinary removed — profile picture not uploaded to cloud
 
   const [isSending, setSending] = useState(false);

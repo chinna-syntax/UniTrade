@@ -9,7 +9,7 @@ export default function FetchChat({ id, toData, to }) {
   const authName = localStorage.getItem("authname");
   const authemail = localStorage.getItem("authemail");
   const authToken = localStorage.getItem("authToken");
-  const backendUrl = '/api';
+  const backendUrl = 'https://unitradegame.onrender.com/api';
   const [newMessages, setNewMessages] = useState([]);
   const [hasNewMessages, setHasNewMessages] = useState(false);
   const messageContainerRef = useRef(null);

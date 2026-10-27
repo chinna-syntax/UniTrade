@@ -100,7 +100,7 @@ export default function AdminDashboard() {
   const cancelRef = React.useRef();
   const toast = useToast();
   const navigate = useNavigate();
-  const backendUrl = '/api';
+  const backendUrl = 'https://unitradegame.onrender.com/api';
   const authToken = localStorage.getItem('authToken');
 
   const cardBg = useColorModeValue('white', 'gray.800');

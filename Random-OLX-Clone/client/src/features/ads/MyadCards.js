@@ -18,7 +18,7 @@ function MyadCards() {
   const [isLoading, setIsLoading] = useState(true);
   const [visibleproducts, setVisibleProducts] = useState(6);
   const hasMoreProductsToLoad = visibleproducts < ads.length;
-  const backendUrl = '/api';
+  const backendUrl = 'https://unitradegame.onrender.com/api';
 
   useEffect(() => {
     const fetchAds = async () => {

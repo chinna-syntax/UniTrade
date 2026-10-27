@@ -22,7 +22,7 @@ export default function Inbox() {
   const authToken = localStorage.getItem("authToken");
   const authemail = localStorage.getItem("authemail");
   const [isLoading, setIsLoading] = useState(true);
-  const backendUrl = '/api';
+  const backendUrl = 'https://unitradegame.onrender.com/api';
 
   useEffect(() => {
     const fetchNewChats = async () => {

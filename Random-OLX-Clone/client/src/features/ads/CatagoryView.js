@@ -40,7 +40,7 @@ export default function CatagoryView() {
   const [loading, setLoading] = useState(true);
   const [visibleproducts, setVisibleProducts] = useState(6);
   const hasMoreProductsToLoad = visibleproducts < products.length;
-  const backendUrl = '/api';
+  const backendUrl = 'https://unitradegame.onrender.com/api';
 
   const isValidCategory = categories.some(
     (cat) => cat.title.toLowerCase() === category.toLowerCase()
