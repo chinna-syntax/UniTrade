@@ -219,15 +219,15 @@ CLOUDINARY_API_KEY=your-cloudinary-api-key
 CLOUDINARY_API_SECRET=your-cloudinary-api-secret
 ```
 
-The client may also use `client/.env` for browser-safe configuration:
+The client may also use `client/.env` for browser-safe Cloudinary configuration:
 
 ```dotenv
-REACT_APP_BACKEND_URL=http://localhost:5000
 REACT_APP_CLOUDINARY_CLOUD_NAME=your-cloudinary-cloud-name
 REACT_APP_CLOUDINARY_UPLOAD_PRESET=your-upload-preset
 ```
 
-Never commit `.env` files or expose `JWT_SECRET` and `CLOUDINARY_API_SECRET` to the browser.
+The frontend always calls the backend through same-origin `/api/*` paths. Never
+commit `.env` files or expose `JWT_SECRET` and `CLOUDINARY_API_SECRET` to the browser.
 
 ### Install dependencies
 

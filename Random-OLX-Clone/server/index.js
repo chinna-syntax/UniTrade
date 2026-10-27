@@ -143,7 +143,7 @@ app.use((req, res, next) => {
 
 // --- Auth / Status Routes ---
 app.get("/api/check-status", (req, res) => {
-  res.json({ status: "online" });
+  res.status(200).json({ status: "Backend is running (No DB)" });
 });
 
 app.get("/auth-endpoint", auth, (req, res) => {
